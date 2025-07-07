@@ -12,6 +12,9 @@
   --btn-border: #000;
   --hover-scale: 1.2;
 }
+html{
+  scroll-behavior: smooth;
+}
   body {
         font-family: 'poppins' sans-serif;
         background-color: black;
@@ -225,6 +228,35 @@ gap: 4px;
   animation: blink 0.7s steps(1) infinite;
   color: #8e44ad;
 }
+#wave{
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: wave 3s infinite ease-in-out;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+}
 #menu-icond{
 transform: rotate(90deg);
 position: relative; 
@@ -248,7 +280,7 @@ right: 0.5em;
     left: 6em;
   }
   .intro-text{
-    font-size: 0.7rem;
+    font-size: 0.9rem;
   }
 
   .menu-iconn{
@@ -256,6 +288,7 @@ right: 0.5em;
   }
   .navbar{
     width: 100%;
+    padding: 0.1em;
   }
   .about{
     display: flex;

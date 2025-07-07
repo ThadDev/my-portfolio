@@ -48,7 +48,7 @@ function night() {
 
   const btn3 = document.getElementById('btn3');
   if (btn3) btn3.style.color = 'white';
-navLinks.style.backgroundColor = 'black';
+navLinks.style.backgroundColor = '';
   menuIcon.style.color = 'white';
 }
 
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const words = [
     "Web app Developer",
     "Brand Designer",
-    "Writer",
+    "Pianist",
     "Frontend Developer",
   
   ];

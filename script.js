@@ -4,7 +4,7 @@ AOS.init({
   once: false,
   mirror: true,
 });
-
+const card =document.querySelectorAll('.card2');
 const menuIcon = document.getElementById('menu-icond');
 const navLinks = document.getElementById('nav-links');
 const dark = document.getElementById('toggle-night');
@@ -33,7 +33,7 @@ if (light) {
 }
 
 function night() {
-  if (!dark || !light || !p || !menuIcon) return;
+  if (!dark || !light || !p || !menuIcon || !card) return;
 
   body.style.backgroundColor = 'black';
   dark.style.display = 'none';
@@ -50,10 +50,14 @@ function night() {
   if (btn3) btn3.style.color = 'white';
 navLinks.style.backgroundColor = '';
   menuIcon.style.color = 'white';
+card.forEach(card2 => {
+  card2.style.backgroundColor = '#1a1a1a';
+  card2.style.color = 'white';
+})
 }
 
 function day() {
-  if (!dark || !light || !p || !menuIcon ) return;
+  if (!dark || !light || !p || !menuIcon || !card ) return;
 
   dark.style.display = 'flex';
   light.style.display = 'none';
@@ -69,7 +73,10 @@ function day() {
   if (btn3) btn3.style.color = 'black';
   navLinks.style.backgroundColor = 'white';
   menuIcon.style.color = "black"
-
+card.forEach(card2 => {
+  card2.style.backgroundColor = '#f0f0f0';
+  card2.style.color = 'black';
+})
 }
 
 let navOpen = false;

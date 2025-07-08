@@ -1,7 +1,9 @@
   /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
 
-
+*{
+  box-sizing: border-box;
+}
 :root {
   --primary-color: #8e44ad;
   --text-dark: #111111;
@@ -14,10 +16,14 @@
 }
 html{
   scroll-behavior: smooth;
+
 }
   body {
         font-family: 'poppins' sans-serif;
         background-color: black;
+        margin: 0;
+  padding: 0;
+  overflow-x: hidden;
     }
     #toggle-night, #toggle-day{
       cursor: pointer;
@@ -170,7 +176,6 @@ html{
 .col-md-3{
   padding: 4em;
   text-align: center;
-  justify-content: center;
   border-radius: 2em;
   background-color:#ab9b9b;
 
@@ -205,7 +210,6 @@ gap: 4px;
   display: flex;
   padding: 1em;
   gap: 1em;
- flex: 1 1 250px;
 }
 .section-title{
   text-align: center;
@@ -304,7 +308,7 @@ right: 0.5em;
       box-shadow: 0 0 6px rgba(255, 255, 255, 0.05);
     }
 
-    .card span {
+    .card2 span {
       font-size: 16px;
     }
 
@@ -313,6 +317,14 @@ right: 0.5em;
       font-size: 20px;
     }
 @media  screen and (max-width:768px) {
+  *{
+    box-sizing: border-box;
+  }
+  html,body {
+    padding: 0;
+    margin: 0%;
+    overflow-x: hidden;
+  }
   #arrow{
     left: 6em;
   }
@@ -324,8 +336,8 @@ right: 0.5em;
     display: flex;
   }
   .navbar{
+    position: fixed;
     width: 100%;
-    padding: 0.1em;
   }
   .about{
     display: flex;
@@ -396,11 +408,13 @@ right: 0.5em;
 }
   .hero-content h1{
     font-size:2.5em;
+   
   }
-.skill-card{
-
+#my-skills{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+ 
 }
 .service-card{
   display: flex;

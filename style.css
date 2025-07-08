@@ -170,13 +170,16 @@ html{
 .col-md-3{
   padding: 4em;
   text-align: center;
+  justify-content: center;
   border-radius: 2em;
   background-color:#ab9b9b;
 
 }
 #my-skills{
+  justify-content: center;
   position: relative;
   padding: 1em;
+  flex-wrap: wrap;
 display: flex;
 gap: 4px;
 
@@ -202,7 +205,7 @@ gap: 4px;
   display: flex;
   padding: 1em;
   gap: 1em;
- 
+ flex: 1 1 250px;
 }
 .section-title{
   text-align: center;
@@ -272,9 +275,43 @@ right: 0.5em;
   }
   50% {
     transform: translateY(30px);
-  }
-
+  }}
+.tech{
+ display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  padding: 2em;
 }
+
+
+    .container2 {
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .card2 {
+      
+      color: #ffffff;
+      background-color: #1a1a1a;
+      padding: 16px 20px;
+      border-radius: 16px;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 6px rgba(255, 255, 255, 0.05);
+    }
+
+    .card span {
+      font-size: 16px;
+    }
+
+    .checkmark {
+      color: var(--primary-color);
+      font-size: 20px;
+    }
 @media  screen and (max-width:768px) {
   #arrow{
     left: 6em;

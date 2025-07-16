@@ -52,7 +52,7 @@ html{
     }
     .hero{
       position: relative;
-      background-image: url(assets/file_00000000a96c620a87d093003365dcbd.png); /* Change to your image path */
+      background-image: url(assets/file_Hero-img.webp); /* Change to your image path */
       background-size: cover;
       background-position: center;
       height: 100vh;

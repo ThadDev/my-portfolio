@@ -52,7 +52,7 @@ html{
     }
     .hero{
       position: relative;
-      background-image: url(assets/file_Hero-img.webp); /* Change to your image path */
+      background-image: url(assets/file_Hero-img.webp); 
       background-size: cover;
       background-position: center;
       height: 100vh;
@@ -65,7 +65,7 @@ html{
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.6); /* semi-transparent black overlay */
+      background: rgba(0, 0, 0, 0.6); /* semi-transparent */
       z-index: 1;
     }
 

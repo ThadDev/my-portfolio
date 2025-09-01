@@ -33,8 +33,7 @@ if (light) {
 }
 
 function night() {
-  if (!dark || !light || !p || !menuIcon || !card) return;
-
+  if (!dark || !light || !p || !menuIcon || !card ) return;
   body.style.backgroundColor = 'black';
   dark.style.display = 'none';
   light.style.display = 'flex';
@@ -58,7 +57,6 @@ card.forEach(card2 => {
 
 function day() {
   if (!dark || !light || !p || !menuIcon || !card ) return;
-
   dark.style.display = 'flex';
   light.style.display = 'none';
   body.style.backgroundColor = 'white';

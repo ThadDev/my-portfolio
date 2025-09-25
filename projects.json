@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Hilltop",
+    "image": "./assets/real-estate.png",
+    "description": "An apartment listing website designed for UNN students to browse, list, and rent apartments.",
+    "tech-stack": ["HTML", "CSS", "JavaScript", "API"],
+    "live": "https://real-estate-website-thaddev.vercel.app",
+    "github": "https://github.com/ThadDev/real-estate-website"
+  },
+  {
+    "id": 2,
+    "title": "Cheluxe👗",
+    "image": "./assets/cheluxe.png",
+    "description": "An e-commerce website for a female clothing brand.",
+    "tech-stack": ["HTML", "CSS", "JavaScript", "supabase"],
+    "live": "https://cheluxe-website-clothing.vercel.app/",
+    "github": "https://github.com/ThadDev/cheluxe-website"
+  },
+  {
+    "id": 3,
+    "title": "DevMentor🤖",
+    "image": "./assets/devmentor.png",
+    "description": "DevMentor is an app where developers can get learning road maps, tech stack ideas for projects, and ask other tech related questions.",
+    "tech-stack": ["Next.js", "HTML", "CSS", "Javascript"],
+    "live": "https://dev-mentor-app.vercel.app",
+    "github": "https://github.com/ThadDev/Dev-Mentor-app"
+  },
+  {
+    "id": 4,
+    "title": "Mega Summit",
+    "image": "./assets/mega-summit.png",
+    "description": "A website for an event(Mega summit comference) showcasing venue and ways to apply.",
+    "tech-stack": ["HTML", "CSS", "JavaScript"],
+    "live": "https://mega-summit.vercel.app",
+    "github": "https://github.com/ThadDev/mega-submitt"
+  }
+]

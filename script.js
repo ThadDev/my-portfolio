@@ -1,118 +1,63 @@
 AOS.init({
   duration: 800,
-  easing: 'ease-in-out',
+  easing: "ease-in-out",
   once: false,
   mirror: true,
 });
-const card =document.querySelectorAll('.card2');
-const menuIcon = document.getElementById('menu-icond');
-const navLinks = document.getElementById('nav-links');
-const dark = document.getElementById('toggle-night');
-const light = document.getElementById('toggle-day');
-const p = document.getElementById('param');
-const body = document.body;
+// theme toggle
 
-if (localStorage.getItem('mode') === 'dark') {
-  night();
-} else {
-  day();
+const root = document.documentElement;
+const lightIcon = document.getElementById("dark-mode");
+const darkIcon = document.getElementById("light-mode");
+const menuIcon = document.getElementById("menu-icon");
+const navLinks = document.getElementById("nav-links");
+
+function setTheme(primary, secondary) {
+  root.style.setProperty("--color-dark", primary);
+  root.style.setProperty("--color-light", secondary);
 }
 
-if (dark) {
-  dark.addEventListener('click', () => {
-    night();
-    localStorage.setItem('mode', 'dark');
-  });
-}
+lightIcon.addEventListener("click", () => {
+  setTheme("#000", "#fff");
+  lightIcon.style.display = "none";
+  darkIcon.style.display = "inline";
+});
 
-if (light) {
-  light.addEventListener('click', () => {
-    day();
-    localStorage.setItem('mode', 'light');
-  });
-}
-
-function night() {
-  if (!dark || !light || !p || !menuIcon || !card ) return;
-  body.style.backgroundColor = 'black';
-  dark.style.display = 'none';
-  light.style.display = 'flex';
-  p.style.color = 'white';
-
-  const navbar = document.getElementById('mainNavbar');
-  if (navbar) {
-    navbar.classList.remove('navbar-custom-light');
-    navbar.classList.add('navbar-custom-dark');
-  }
-
-  const btn3 = document.getElementById('btn3');
-  if (btn3) btn3.style.color = 'white';
-navLinks.style.backgroundColor = '';
-  menuIcon.style.color = 'white';
-card.forEach(card2 => {
-  card2.style.backgroundColor = '#1a1a1a';
-  card2.style.color = 'white';
-})
-}
-
-function day() {
-  if (!dark || !light || !p || !menuIcon || !card ) return;
-  dark.style.display = 'flex';
-  light.style.display = 'none';
-  body.style.backgroundColor = 'white';
-  p.style.color = 'black';
-  const navbar = document.getElementById('mainNavbar');
-  if (navbar) {
-    navbar.classList.remove('navbar-custom-dark');
-    navbar.classList.add('navbar-custom-light');
-  }
-
-  const btn3 = document.getElementById('btn3');
-  if (btn3) btn3.style.color = 'black';
-  navLinks.style.backgroundColor = 'white';
-  menuIcon.style.color = "black"
-card.forEach(card2 => {
-  card2.style.backgroundColor = '#f0f0f0';
-  card2.style.color = 'black';
-})
-}
-
+darkIcon.addEventListener("click", () => {
+  setTheme("#fff", "#000");
+  darkIcon.style.display = "none";
+  lightIcon.style.display = "inline";
+});
+// menu toggle
 let navOpen = false;
 
 if (menuIcon && navLinks) {
-  menuIcon.addEventListener('click', () => {
+  menuIcon.addEventListener("click", () => {
     if (!navOpen) {
-      navLinks.classList.remove('slide-up');
-      navLinks.classList.add('slide-down');
-      menuIcon.style.transform = 'rotate(-90deg)';
+      navLinks.classList.remove("slide-up");
+      navLinks.classList.add("slide-down");
+      menuIcon.style.transform = "rotate(-90deg)";
       navOpen = true;
     } else {
-      navLinks.classList.remove('slide-down');
-      navLinks.classList.add('slide-up');
-      menuIcon.style.transform = 'rotate(90deg)';
+      navLinks.classList.remove("slide-down");
+      navLinks.classList.add("slide-up");
+      menuIcon.style.transform = "rotate(90deg)";
       navOpen = false;
     }
   });
 
-  document.querySelectorAll('#nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('slide-down');
-      navLinks.classList.add('slide-up');
-      menuIcon.style.transform = 'rotate(90deg)';
+  document.querySelectorAll("#nav-links a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("slide-down");
+      navLinks.classList.add("slide-up");
+      menuIcon.style.transform = "rotate(90deg)";
       navOpen = false;
     });
   });
 }
 
-
 document.addEventListener("DOMContentLoaded", () => {
-  const words = [
-    "Web app Developer",
-    "Brand Designer",
-    "Pianist",
-    "Frontend Developer",
-  
-  ];
+  const words = ["Web app Developer", "Pianist", "Frontend Developer"];
   const typingText = document.getElementById("typing-text");
 
   let wordIndex = 0;
@@ -140,4 +85,56 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   typeEffect();
+});
+
+//fetch projects from json
+
+fetch("projects.json")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Failed to load projects.json");
+    }
+    return response.json();
+  })
+  .then((projects) => {
+    const container = document.getElementById("project-container");
+
+    projects.forEach((project) => {
+      const card = document.createElement("div");
+      card.classList.add("project-card");
+
+      // Card HTML
+      card.innerHTML = `
+        <img src="${project.image}" alt="${
+        project.title
+      }" class="project-image">
+        <h3 class="project-title">${project.title}</h3>
+        <p class="project-description">${project.description}</p>
+        <div class="project-tech">
+          ${project["tech-stack"]
+            .map((tech) => `<span class="tech-badge">${tech}</span>`)
+            .join("")}
+        </div>
+         <div class="overlay">
+    <a href="${
+      project.live
+    }" target="_blank" class="project-link">🔗 Live Demo</a>
+    <a href="${
+      project.github
+    }" target="_blank" class="project-link github"><span class="iconify" data-icon="mdi:github"></span></a>
+  </div>
+      `;
+
+      // Append card into container
+      container.appendChild(card);
+    });
+  })
+  .catch((err) => console.error("Error loading projects:", err));
+
+document.querySelectorAll(".project-card").forEach((card) => {
+  card.addEventListener("click", () => {
+    if (window.innerWidth <= 768) {
+      card.classList.toggle("show-overlay");
+    }
+  });
 });

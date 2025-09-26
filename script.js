@@ -105,9 +105,18 @@ fetch("projects.json")
 
       // Card HTML
       card.innerHTML = `
-        <img src="${project.image}" alt="${
-        project.title
-      }" class="project-image">
+           <img class="product-image"
+        src="assets/${project.image}.jpg"
+        srcset="
+          optimized/mobile/${project.image}.webp ,
+          optimized/tablet/${project.image}.webp ,
+          optimized/desktop/${project.image}.webp
+        "
+        sizes="(max-width: 768px) 100vw, 50vw"
+        alt="ugwu thaddeus okechukwu"
+        loading="lazy"
+        decoding="async"
+      >
         <h3 class="project-title">${project.title}</h3>
         <p class="project-description">${project.description}</p>
         <div class="project-tech">

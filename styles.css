@@ -36,6 +36,7 @@ header {
   font-size: large;
   color: var(--primary-color);
   text-decoration: none;
+  font-weight: bolder;
 }
 .nav-links {
   display: flex;
@@ -57,7 +58,7 @@ header {
 .hero {
   top: 4em;
   position: relative;
-  background-image: url(assets/file_Hero-img.webp);
+  background-image: url(.../../optimized/file_Hero-img.webp);
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -110,6 +111,16 @@ header {
   border: 1px solid var(--color-light);
   border-radius: 50%;
 }
+.cursor {
+  display: inline-block;
+  animation: blink 0.7s steps(1) infinite;
+  color: white;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
 #wave {
   display: inline-block;
   transform-origin: 70% 70%;
@@ -150,6 +161,7 @@ header {
   border-bottom-right-radius: 250px;
   border-bottom-left-radius: 250px;
   object-fit: cover;
+  border: 2px solid var(--primary-color);
 }
 #about {
   text-align: center;
@@ -196,8 +208,9 @@ header {
 }
 
 .skill-card {
-  color: #ffffff;
-  background-color: #1a1a1a;
+  color: var(--color-light);
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
   padding: 16px 20px;
   border-radius: 16px;
   justify-content: space-between;
@@ -366,8 +379,10 @@ footer {
   display: none;
   color: var(--color-light);
   transform: rotate(90deg);
-  position: relative;
-  right: 0.5em;
+}
+.btn {
+  display: flex;
+  gap: 1em;
 }
 @keyframes beep {
   0%,
@@ -403,7 +418,13 @@ footer {
   body {
     padding: 0;
     margin: 0%;
-    overflow-x: hidden;
+  }
+
+  html {
+    overflow-x: auto;
+  }
+  footer p {
+    font-size: small;
   }
   #arrow {
     left: 2em;
@@ -413,7 +434,7 @@ footer {
     font-size: 0.9rem;
   }
   .hero-text h1 {
-    font-size: 2.5em;
+    font-size: 2em;
   }
   .skill-sect {
     display: flex;
@@ -472,5 +493,63 @@ footer {
     transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
+  }
+}
+/* Small mobile devices (≤480px) */
+/* @media screen and (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.8em;
+  }
+  .intro-text {
+    font-size: 0.8rem;
+  }
+  .my-pic {
+    width: 14em;
+    height: 18em;
+  }
+  #arrow {
+    left: 1em;
+    bottom: 0;
+  }
+  .nav-links a {
+    font-size: 1.5rem;
+  }
+} */
+
+/* Tablets & small laptops (769px – 1024px) */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  #project-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero-text h1 {
+    font-size: 3.5em;
+  }
+  .intro-text {
+    font-size: 1.2rem;
+  }
+  .about {
+    flex-direction: column;
+    align-items: center;
+  }
+  .my-pic {
+    width: 22em;
+    height: 28em;
+  }
+}
+
+/* Large desktops (≥1200px) */
+@media screen and (min-width: 1200px) {
+  .hero-text h1 {
+    font-size: 4.5em;
+  }
+  .intro-text {
+    font-size: 1.5rem;
+  }
+  #project-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .my-pic {
+    width: 30em;
+    height: 35em;
   }
 }

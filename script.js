@@ -106,7 +106,7 @@ fetch("projects.json")
       // Card HTML
       card.innerHTML = `
            <img class="product-image"
-        src="assets/${project.image}.jpg"
+        src="assets/desktop/${project.image}.webp"
         srcset="
           optimized/mobile/${project.image}.webp ,
           optimized/tablet/${project.image}.webp ,

@@ -1,6 +1,14 @@
-[
-  {
+[  {
     "id": 1,
+    "title": "Angies cakes",
+    "image": "angies",
+    "description": "A web app for a bakery, built with React and Tailwind css",
+    "tech-stack": ["React", "Tailwind CSS", "JavaScript"],
+    "live": "https://angies-cakes-app.vercel.app",
+    "github": "https://github.com/ThadDev/angies-cakes"
+  },
+  {
+    "id": 2,
     "title": "Hilltop",
     "image": "real-estate",
     "description": "An apartment listing website designed for UNN students to browse, list, and rent apartments.",
@@ -9,7 +17,7 @@
     "github": "https://github.com/ThadDev/real-estate-website"
   },
   {
-    "id": 2,
+    "id": 3,
     "title": "Cheluxe👗",
     "image": "cheluxe",
     "description": "An e-commerce website for a female clothing brand.",
@@ -18,21 +26,13 @@
     "github": "https://github.com/ThadDev/cheluxe-website"
   },
   {
-    "id": 3,
+    "id": 4,
     "title": "DevMentor🤖",
     "image": "devmentor",
     "description": "DevMentor is an app where developers can get learning road maps, tech stack ideas for projects, and ask other tech related questions.",
     "tech-stack": ["Next.js", "HTML", "CSS", "Javascript"],
     "live": "https://dev-mentor-app.vercel.app",
     "github": "https://github.com/ThadDev/Dev-Mentor-app"
-  },
-  {
-    "id": 4,
-    "title": "Mega Summit",
-    "image": "mega-summit",
-    "description": "A website for an event(Mega summit comference) showcasing venue and ways to apply.",
-    "tech-stack": ["HTML", "CSS", "JavaScript"],
-    "live": "https://mega-submitt.vercel.app",
-    "github": "https://github.com/ThadDev/mega-submitt"
   }
+ 
 ]

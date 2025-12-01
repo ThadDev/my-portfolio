@@ -265,7 +265,7 @@ header {
 }
 
 .project-image {
-  width: 100%;
+  width: 10em;
   height: 8em;
   border-radius: 8px;
   flex-shrink: 0;
